@@ -13,11 +13,11 @@ NEWS_FEEDS = [
 ]
 
 DEAL_FEEDS = [
-    "https://slickdeals.net/newsearch.php?mode=popdeals&searcharea=deals&rss=1",
-    "https://www.reddit.com/r/buildapcsales/.rss",
-    "https://9to5toys.com/feed/",
-    "https://www.dealnews.com/rss.html",
-    "https://www.kotaku.com/deals/rss"
+    "https://www.amazon.com/gp/rss/bestsellers/electronics/",
+    "https://www.amazon.com/gp/rss/bestsellers/electronics/172456",
+    "https://www.amazon.com/gp/rss/bestsellers/electronics/172541",
+    "https://www.amazon.com/gp/rss/bestsellers/electronics/7073960011",
+    "https://www.amazon.com/gp/rss/bestsellers/smart-home/"
 ]
 
 AMAZON_ASSOCIATE_TAG = "thegadgetgobl-20"
