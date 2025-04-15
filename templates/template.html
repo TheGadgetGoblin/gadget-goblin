@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gadget Goblin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+  <!-- AdSense verification -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9397987161647508"
+          crossorigin="anonymous"></script>
+ 
+  <script data-ad-client="ca-pub-YOUR_ADSENSE_ID" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+  </script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    h1, h2 { color: #333; }
+    section { margin-bottom: 2rem; }
+    article { margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Gadget Goblin</h1>
+
+  <section id="news">
+    <h2>Latest Tech News</h2>
+    {% for item in news %}
+      <article>
+        <a href="{{ item.link }}" target="_blank">{{ item.title }}</a>
+      </article>
+    {% endfor %}
+  </section>
+
+  <section id="deals">
+    <h2>Hot Gadget Deals</h2>
+    {% for deal in deals %}
+      <article>
+        <a href="{{ deal.link }}" target="_blank">{{ deal.title }}</a>
+      </article>
+    {% endfor %}
+  </section>
+
+  <ins class="adsbygoogle"
+       style="display:block; text-align:center;"
+       data-ad-client="ca-pub-9397987161647508"
+       data-ad-slot="YOUR_SLOT_ID"
+       data-ad-format="auto"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>
