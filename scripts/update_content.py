@@ -49,10 +49,11 @@ def main():
     env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
     template = env.get_template("template.html")
 
-    # Add Amazon tag to links that contain amazon.com
+    # Add Amazon tag and clean links if needed
     for d in deals:
         if "amazon.com" in d.link:
-            d.link += f"?tag={AMAZON_ASSOCIATE_TAG}"
+            clean_link = d.link.split("ref=")[0].split("?")[0]
+            d.link = f"{clean_link}?tag={AMAZON_ASSOCIATE_TAG}"
 
     html = template.render(news=news, deals=deals)
 
