@@ -27,11 +27,11 @@ def main():
     env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
     template = env.get_template("template.html")
 
-    # Attach Amazon affiliate tag to each deal link
-    deals = [
-        {**deal, "link": f"{deal.link}?tag={thegadgetgobl-20}"}
-        for deal in deals
-    ]
+  # Attach Amazon affiliate tag to each deal link
+deals = [
+    {**deal, "link": f"{deal.link}?tag=thegadgetgobl-20"}
+    for deal in deals
+]
 
     html = template.render(news=news, deals=deals)
 
