@@ -4,103 +4,160 @@
   <meta charset="UTF-8" />
   <title>Gadget Goblin - Daily Tech News & Deals</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- AdSense Verification -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9397987161647508"
           crossorigin="anonymous"></script>
-
   <style>
     body {
       font-family: system-ui, sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-      background: #fafafa;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
       color: #222;
     }
-    h1, h2 {
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      border-bottom: 1px solid #ccc;
+      padding: 0.5rem 1rem;
       text-align: center;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
-    section {
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    h2 {
       margin-top: 2rem;
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.25rem;
     }
-    article {
+    section article {
       margin-bottom: 1rem;
     }
     a {
-      color: #0077cc;
       text-decoration: none;
+      color: #0077cc;
     }
     a:hover {
       text-decoration: underline;
+    }
+    .amazon {
+      color: #065f46;
+      background-color: #d1fae5;
+      padding: 0.5rem;
+      border-radius: 6px;
+      display: inline-block;
+    }
+    .deal-title strong {
+      color: #b91c1c;
     }
   </style>
 </head>
 <body>
 
-  <h1>Gadget Goblin</h1>
-  <p style="text-align: center;">Daily Tech News & Gadget Deals Delivered by Bots 🧙‍♂️</p>
+  <header>
+    <h1>🧙 Gadget Goblin</h1>
+    <p style="margin: 0; font-size: 0.9rem;">Tech News & Deals Delivered by Bots</p>
+  </header>
 
-  <!-- Ad Unit -->
-  <ins class="adsbygoogle"
-       style="display:block; text-align:center;"
-       data-ad-client="ca-pub-9397987161647508"
-       data-ad-slot="1234567890"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>
-       (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
+  <div class="container">
 
-  <section id="news">
-    <h2>📰 Latest Tech News</h2>
-    
-      <article>
-        <a href="https://www.theverge.com/news/649314/cve-mitre-funding-vulnerabilities-exposures-funding" target="_blank">The CVE program for tracking security flaws is about to lose federal funding</a>
-      </article>
-    
-      <article>
-        <a href="https://www.techradar.com/pro/intel-sells-majority-of-its-fpga-business-to-silver-lake-for-just-under-usd4-5-billion-heres-what-you-need-know" target="_blank">Intel sells majority of its FPGA business to Silver Lake for just under $4.5 billion - here's what you need know</a>
-      </article>
-    
-      <article>
-        <a href="https://www.theverge.com/news/648893/meta-redacted-documents-leak-ftc-antitrust-opening-statement" target="_blank">Meta’s antitrust trial slide redactions aren’t actually hiding anything</a>
-      </article>
-    
-      <article>
-        <a href="https://www.nytimes.com/2025/04/15/technology/meta-antitrust-trial-mark-zuckerberg.html" target="_blank">At Trial, Mark Zuckerberg Avoids Explaining Takeovers of Instagram and WhatsApp</a>
-      </article>
-    
-      <article>
-        <a href="https://www.engadget.com/transportation/how-to-watch-kias-new-york-international-auto-show-presentation-on-april-16-195259387.html?src=rss" target="_blank">How to watch Kia's New York International Auto Show presentation on April 16</a>
-      </article>
-    
-  </section>
+    <section id="news">
+      <h2>📰 Latest Tech News</h2>
+      
+        <article>
+          <a href="https://www.theverge.com/news/649314/cve-mitre-funding-vulnerabilities-exposures-funding" target="_blank">
+            🟣
+            
+            The CVE program for tracking security flaws is about to lose federal funding
+          </a>
+        </article>
+      
+        <article>
+          <a href="https://www.techradar.com/pro/intel-sells-majority-of-its-fpga-business-to-silver-lake-for-just-under-usd4-5-billion-heres-what-you-need-know" target="_blank">
+            📡
+            
+            Intel sells majority of its FPGA business to Silver Lake for just under $4.5 billion - here's what you need know
+          </a>
+        </article>
+      
+        <article>
+          <a href="https://www.theverge.com/news/648893/meta-redacted-documents-leak-ftc-antitrust-opening-statement" target="_blank">
+            🟣
+            
+            Meta’s antitrust trial slide redactions aren’t actually hiding anything
+          </a>
+        </article>
+      
+        <article>
+          <a href="https://www.nytimes.com/2025/04/15/technology/meta-antitrust-trial-mark-zuckerberg.html" target="_blank">
+            📰
+            
+            At Trial, Mark Zuckerberg Avoids Explaining Takeovers of Instagram and WhatsApp
+          </a>
+        </article>
+      
+        <article>
+          <a href="https://www.engadget.com/transportation/how-to-watch-kias-new-york-international-auto-show-presentation-on-april-16-195259387.html?src=rss" target="_blank">
+            
+            How to watch Kia's New York International Auto Show presentation on April 16
+          </a>
+        </article>
+      
+    </section>
 
-  <section id="deals">
-    <h2>🔥 Hot Gadget Deals</h2>
-    
-      <article>
-        <a href="https://9to5toys.com/2025/04/15/baseus-6-in-1-powercombo-100w-strip-50/" target="_blank">Baseus’ 6-in-1 100W USB-C travel-ready strip covers your essential power needs at $50 (Reg. $110)</a>
-      </article>
-    
-      <article>
-        <a href="https://9to5toys.com/2025/04/15/usbc-backbone-one-iphone-android-controller/" target="_blank">Latest USB-C Backbone ONE iPhone/Android controller with official carrying case now at $70 ($125 value)</a>
-      </article>
-    
-      <article>
-        <a href="https://9to5toys.com/2025/04/15/enjoy-a-lifetime-of-easy-pdf-use-with-updf-now-48-reg-149/" target="_blank">Enjoy a lifetime of easy PDF use with UPDF, now $48 (Reg. $149)</a>
-      </article>
-    
-      <article>
-        <a href="https://9to5toys.com/2025/04/15/dripdrop-32-pack-0-82-each/" target="_blank">This DripDrop 32-pack keeps you hydrated with 3x the electrolytes at $0.82 each</a>
-      </article>
-    
-      <article>
-        <a href="https://9to5toys.com/2025/04/15/yeedi-s14-plus-robot-review/" target="_blank">Review: Yeedi S14 Plus Robot Vacuum and Mop – the new flagship cleaner that tackles more with far less noise</a>
-      </article>
-    
-  </section>
+    <section id="deals">
+      <h2>🔥 Hot Gadget Deals</h2>
+      
+        <article>
+          
+            <a class="deal-title" href="https://9to5toys.com/2025/04/15/baseus-6-in-1-powercombo-100w-strip-50/" target="_blank">
+              💸 Baseus’ 6-in-1 100W USB-C travel-ready strip covers your essential power needs at $50 (Reg. $110)
+            </a>
+          
+        </article>
+      
+        <article>
+          
+            <a class="deal-title" href="https://9to5toys.com/2025/04/15/usbc-backbone-one-iphone-android-controller/" target="_blank">
+              💸 Latest USB-C Backbone ONE iPhone/Android controller with official carrying case now at $70 ($125 value)
+            </a>
+          
+        </article>
+      
+        <article>
+          
+            <a class="deal-title" href="https://slickdeals.net/f/18254110-10-starbucks-egift-card-7-50?utm_source=rss&utm_content=ht&utm_medium=RSS2" target="_blank">
+              💸 $10 Starbucks eGift Card $7.50
+            </a>
+          
+        </article>
+      
+        <article>
+          
+            <a class="deal-title" href="https://9to5toys.com/2025/04/15/enjoy-a-lifetime-of-easy-pdf-use-with-updf-now-48-reg-149/" target="_blank">
+              💸 Enjoy a lifetime of easy PDF use with UPDF, now $48 (Reg. $149)
+            </a>
+          
+        </article>
+      
+        <article>
+          
+            <a class="deal-title" href="https://9to5toys.com/2025/04/15/dripdrop-32-pack-0-82-each/" target="_blank">
+              💸 This DripDrop 32-pack keeps you hydrated with 3x the electrolytes at $0.82 each
+            </a>
+          
+        </article>
+      
+    </section>
 
+  </div>
 </body>
 </html>
