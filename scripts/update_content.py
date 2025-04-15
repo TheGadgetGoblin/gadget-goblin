@@ -3,35 +3,56 @@ import feedparser
 from jinja2 import Environment, FileSystemLoader
 
 # === CONFIG ===
-NEWS_RSS_URL = "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml"
-AMAZON_DEALS_RSS_URL = "https://www.amazon.com/gp/rss/bestsellers/electronics/ref=zg_bs_e_1_rss"
-AMAZON_ASSOCIATE_TAG = "your-amazon-tag"  # Replace this with your real Amazon affiliate tag
 
-# File paths
+NEWS_FEEDS = [
+    "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+    "https://www.theverge.com/rss/index.xml",
+    "https://www.engadget.com/rss.xml",
+    "https://feeds.arstechnica.com/arstechnica/technology-lab",
+    "https://www.techradar.com/rss"
+]
+
+DEAL_FEEDS = [
+    "https://slickdeals.net/newsearch.php?mode=popdeals&searcharea=deals&rss=1",
+    "https://www.reddit.com/r/buildapcsales/.rss",
+    "https://9to5toys.com/feed/",
+    "https://www.dealnews.com/rss.html",
+    "https://www.kotaku.com/deals/rss"
+]
+
+AMAZON_ASSOCIATE_TAG = "thegadgetgobl-20"
+
 TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), "../templates")
 OUTPUT_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "index.html"))
 
 # === FUNCTIONS ===
 
-def fetch_feed(url):
-    return feedparser.parse(url).entries
+def fetch_combined_entries(feed_urls, max_total=5):
+    combined = []
+    for url in feed_urls:
+        try:
+            feed = feedparser.parse(url)
+            combined.extend(feed.entries)
+        except Exception as e:
+            print(f"Error fetching from {url}: {e}")
+    # Sort by publish time if available
+    combined = sorted(combined, key=lambda x: x.get("published_parsed", None), reverse=True)
+    return combined[:max_total]
 
 def main():
-    news = fetch_feed(NEWS_RSS_URL)[:5]
-    deals = fetch_feed(AMAZON_DEALS_RSS_URL)[:5]
+    news = fetch_combined_entries(NEWS_FEEDS, max_total=5)
+    deals = fetch_combined_entries(DEAL_FEEDS, max_total=5)
 
-    # Print debug info
     print(f"Fetched {len(news)} news articles")
     print(f"Fetched {len(deals)} deals")
 
     env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
     template = env.get_template("template.html")
 
-  # Attach Amazon affiliate tag to each deal link
-deals = [
-    {**deal, "link": f"{deal.link}?tag=thegadgetgobl-20"}
-    for deal in deals
-]
+    # Add Amazon tag to links that contain amazon.com
+    for d in deals:
+        if "amazon.com" in d.link:
+            d.link += f"?tag={AMAZON_ASSOCIATE_TAG}"
 
     html = template.render(news=news, deals=deals)
 
